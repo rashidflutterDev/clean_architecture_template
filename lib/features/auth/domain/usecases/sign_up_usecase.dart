@@ -1,4 +1,4 @@
-import 'package:clean_architecture_template/features/auth/domain/usecases/entities/repositories/auth_remote_repository.dart';
+import 'package:clean_architecture_template/features/auth/domain/repository/auth_repository.dart';
 import 'package:clean_architecture_template/core/error/app_failure.dart';
 import 'package:clean_architecture_template/core/usecase/usecase.dart';
 import 'package:fpdart/fpdart.dart';

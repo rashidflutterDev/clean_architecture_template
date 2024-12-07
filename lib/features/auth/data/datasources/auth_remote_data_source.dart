@@ -34,8 +34,18 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<String> signInWithEmailPassword(
-      {required String email, required String password}) {
-    // TODO: implement signInWithEmailPassword
-    throw UnimplementedError();
+      {required String email, required String password}) async {
+    try {
+      final res = await supabaseClient.auth
+          .signInWithPassword(password: password, email: email);
+
+      return res.user!.id;
+    } on AuthException catch (e) {
+      print('error: ${e.message}');
+      throw AppExeption(e.message);
+    } catch (e) {
+      print('error: ${e.toString()}');
+      throw AppExeption(e.toString());
+    }
   }
 }
