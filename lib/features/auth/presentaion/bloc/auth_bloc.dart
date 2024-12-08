@@ -8,7 +8,12 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvents, AuthState> {
   final SignUpUsecase _signUpUsecase;
   final SignInUseCase _signInUseCase;
-  AuthBloc(this._signUpUsecase, this._signInUseCase) : super(AuthInitial()) {
+  AuthBloc(
+      {required SignInUseCase signInUseCase,
+      required SignUpUsecase signUpUseCase})
+      : _signUpUsecase = signUpUseCase,
+        _signInUseCase = signInUseCase,
+        super(AuthInitial()) {
     on<AuthSignUpEvent>((event, emit) async {
       emit(AuthLoading());
 

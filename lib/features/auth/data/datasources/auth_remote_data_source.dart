@@ -41,10 +41,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
       return res.user!.id;
     } on AuthException catch (e) {
-      print('error: ${e.message}');
       throw AppExeption(e.message);
     } catch (e) {
-      print('error: ${e.toString()}');
       throw AppExeption(e.toString());
     }
   }

@@ -39,6 +39,8 @@ dependencies:
   flutter_bloc: ^8.1.6
   supabase_flutter: ^2.8.1
   supabase: ^2.6.0
+  getx_multilanguage_helper: ^0.0.2
+  get_it: ^8.0.2
 
 dev_dependencies:
   flutter_test:
